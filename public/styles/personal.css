@@ -1,0 +1,177 @@
+.personal-container {
+  display: grid;
+  grid-template-rows: 96px 1fr;
+  padding: 0 23px 0 23px;
+
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name-pic-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 48px;
+  height: 48px;
+  background-color: #e0d4fa;
+  color: #20202a;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.user-name {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.user-status {
+  font-size: 14px;
+  color: rgb(112, 112, 112);
+}
+
+.settings-btn {
+  color: rgb(112, 112, 112);
+  cursor: pointer;
+}
+
+/* Media */
+
+.personal-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 23px 0 23px 0;
+}
+
+.subtext-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.text-media {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.media-count,
+.text-see-all,
+.file-stats,
+.starred-message-info {
+  font-size: 12px;
+  color: rgb(112, 112, 112);
+}
+
+.text-see-all {
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.text-see-all:hover {
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.media-img-container {
+  margin: 23px 0 23px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-container {
+  width: 71px;
+  height: 71px;
+  cursor: pointer;
+}
+
+.media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.hr-seperator {
+  margin: 0;
+  width: 100%;
+  margin: auto;
+  border: 1px solid rgb(43, 43, 43);
+}
+
+/* Files */
+
+.file-preview-container {
+  display: flex;
+  margin: 20px 0 17px 0;
+  border-radius: 15px;
+  transition: background-color 0.15s;
+}
+
+.file-preview-container:hover {
+  cursor: pointer;
+  background-color: #454555;
+}
+
+.file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: #2b2b35;
+  margin-right: 12px;
+}
+
+.file-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Starred Messages */
+
+
+.user-chat-message,
+.partner-chat-message {
+  font-size: 12px;
+  padding: 12px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 1px solid rgb(54, 54, 54);
+}
+
+.user-chat-message {
+  background-color: #fef5d4;
+  color: black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 2px;
+}
+
+.partner-chat-message {
+  background-color: #2b2b35;
+  color: rgb(172, 172, 172);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 15px;
+}
+
+.starred-message-info {
+  margin: 7px 0 10px 0;
+}

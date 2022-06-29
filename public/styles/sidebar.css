@@ -1,0 +1,73 @@
+.sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  border-right: 1px solid rgb(43, 43, 43);
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Substitute spacer for 3 colored Mac dots */
+.spacer {
+  color: #20202a;
+  height: 120px;
+}
+
+.icon {
+  margin: 20px 0 20px 0;
+  cursor: pointer;
+  color: rgb(112, 112, 112);
+}
+
+.add-bell-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bell-icon {
+  color: rgba(255, 255, 255, 0.801);
+  margin-bottom: 26px;
+}
+
+.notification-count {
+  font-family: "Arial";
+  position: absolute;
+  top: 15px;
+  right: 7px;
+  background-color: rgb(200, 0, 0);
+  color: white;
+  font-size: 11px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 10px;
+  /* Make text not selectable */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.new-chat {
+  margin-bottom: 20px;
+  width: 46px;
+  height: 46px;
+  background-color: #e0d4fa;
+  color: #8a6edd;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.new-chat:hover {
+  background-color: #d2bdff;
+}

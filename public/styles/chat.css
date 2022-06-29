@@ -1,0 +1,177 @@
+.chat-panel {
+  display: grid;
+  grid-template-rows: 96px 1fr 90px;
+  border-right: 1px solid rgb(43, 43, 43);
+}
+
+.chat-contact {
+  border-bottom: 1px solid rgb(43, 43, 43);
+}
+
+.chat-history {
+  background-color: #17171f;
+}
+
+.chat-input {
+  border-top: 1px solid rgb(43, 43, 43);
+}
+
+.chat-partner {
+  display: grid;
+  align-items: center;
+  padding: 0 23px 0 23px;
+  border-bottom: 1px solid rgb(43, 43, 43);
+}
+
+.chat-partner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+}
+
+.contact-picture {
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  background-color: #fef5d4;
+  color: #20202a;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.name-status-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.contact-name {
+  font-size: 20px;
+}
+
+.contact-status {
+  font-size: 14px;
+  color: rgb(112, 112, 112);
+}
+
+.contact-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-btn,
+.more-btn {
+  cursor: pointer;
+}
+
+/* TODO: Neon colors */
+.contact-btn {
+  margin-right: 30px;
+}
+
+.more-btn {
+  margin-left: 22px;
+  color: rgb(112, 112, 112);
+}
+
+.video-container,
+.phone-container,
+.search-container,
+.dots-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container .tooltip,
+.phone-container .tooltip,
+.search-container .tooltip,
+.dots-container .tooltip {
+  position: absolute;
+  background-color: grey;
+  color: white;
+  padding: 4px 8px 4px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  bottom: -40px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.video-container:hover .tooltip,
+.phone-container:hover .tooltip,
+.search-container:hover .tooltip,
+.dots-container:hover .tooltip {
+  opacity: 1;
+}
+
+/*     ChatInput     */
+
+.chat-input-container {
+  border-top: 1px solid rgb(43, 43, 43);
+  display: grid;
+  grid-template-columns: 42px 1fr 146px;
+  align-items: center;
+  padding: 0 25px 0 25px;
+}
+
+.attach-btn {
+  width: 44px;
+  height: 44px;
+  background-color: #fef5d4;
+  color: #20202a;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.attach-btn:hover {
+  background-color: #ffeca6;
+}
+
+.message-input {
+  width: 94%;
+  margin: 0 20px 0 20px;
+  height: 40px;
+  border: none;
+  background-color: #20202a;
+  font-size: 14px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(112, 112, 112);
+}
+
+.send-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+  border-radius: 21px;
+  background-color: #32323a;
+  color: white;
+}
