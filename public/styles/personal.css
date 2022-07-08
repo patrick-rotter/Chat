@@ -7,12 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.profile-container,
-.media-container {
   margin: 0 23px 0 23px;
 }
+
 
 .name-pic-container {
   display: flex;
@@ -138,7 +135,7 @@
 }
 
 .media-img-container {
-  margin: 23px 0 23px 0;
+  margin: 23px;
   display: flex;
   justify-content: space-between;
 }

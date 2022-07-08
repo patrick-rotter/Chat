@@ -5,6 +5,8 @@ import { contacts } from "../../demo/contacts"
 
 interface Props {}
 
+// TODO: Component rerenders on every click - why?
+
 export const Messages: React.FC<Props> = () => {
   return (
     <div className="messages-container">

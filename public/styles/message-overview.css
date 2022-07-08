@@ -81,13 +81,6 @@ TODO: top: 82px is set manually -> better solution?
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.text-container {
-  margin: 23px 10px 23px 10px;
-}
-
-.stories-text-container {
   margin: 23px;
 }
 
@@ -167,7 +160,6 @@ TODO: top: 82px is set manually -> better solution?
 
 /* TODO: add custom style to scrollbar */
 .messages-container {
-  padding: 0 13px 0 13px;
   position: relative;
 }
 
@@ -221,7 +213,7 @@ TODO: top: 82px is set manually -> better solution?
 .conversation-container {
   display: flex;
   padding: 10px;
-  margin: 11px 0 11px 0;
+  margin: 11px 13px 11px 13px;
   border-radius: 10px;
   transition: background-color 0.15s;
 }
