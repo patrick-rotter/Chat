@@ -1,13 +1,17 @@
 .personal-container {
   display: grid;
   grid-template-rows: 96px 1fr;
-  padding: 0 23px 0 23px;
 }
 
 .profile-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.profile-container,
+.media-container {
+  margin: 0 23px 0 23px;
 }
 
 .name-pic-container {
@@ -103,7 +107,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  margin: 23px 0 23px 0;
+  margin: 23px;
 }
 
 .subtext-container {
@@ -155,9 +159,10 @@
 /* Files */
 
 .file-preview-container {
+  padding: 10px;
   display: flex;
-  margin: 20px 0 17px 0;
-  border-radius: 15px;
+  margin: 10px 13px 7px 13px;
+  border-radius: 10px;
   transition: background-color 0.15s;
 }
 
@@ -190,7 +195,7 @@
   position: relative;
 }
 
-.tarred-messages-container::after {
+.starred-messages-container::after {
   pointer-events: none;
   z-index: 200;
   position: absolute;
@@ -214,6 +219,11 @@
   border: 1px solid rgb(54, 54, 54);
 }
 
+#light .starred-user-msg,
+#light .starred-partner-msg {
+  border: none
+}
+
 .starred-user-msg {
   background-color: #fef5d4;
   color: black;
@@ -221,11 +231,21 @@
   border-bottom-right-radius: 2px;
 }
 
+#light .starred-user-msg {
+  background-color: rgb(105, 105, 253);
+  color: white;
+}
+
 .starred-partner-msg {
   background-color: #2b2b35;
-  color: rgb(172, 172, 172);
+  color: rgb(206, 206, 206);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 15px;
+}
+
+#light .starred-partner-msg {
+  background-color: rgb(231, 231, 231);
+  color: black;
 }
 
 .starred-msg-info {
@@ -238,6 +258,7 @@
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
+  margin: 0 23px 0 23px;
 }
 
 .scroll-starred-container::-webkit-scrollbar {

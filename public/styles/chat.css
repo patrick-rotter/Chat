@@ -1,11 +1,13 @@
 .chat-panel {
   display: grid;
   grid-template-rows: 96px 1fr 80px;
+  border-left: 1px solid rgb(43, 43, 43);
   border-right: 1px solid rgb(43, 43, 43);
   height: 100vh;
 }
 
 #light .chat-panel {
+  border-left: 1px solid rgb(196, 196, 196);
   border-right: 1px solid rgb(196, 196, 196);
 }
 
@@ -133,18 +135,34 @@
 
 .chat-history-container {
   background-color: #17171f;
-  padding: 5px 23px 0 23px;
+  padding: 5px 15px 0 23px;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
 }
 
 #light .chat-history-container {
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(255, 255, 255);
 }
 
-.chat-history-container::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  display: block
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2b35;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(172, 172, 172);
+}
+
+#light ::-webkit-scrollbar-thumb {
+  background: #a7a7a7;
+}
+
+#light ::-webkit-scrollbar-thumb:hover {
+  background: #d6d6d6;
 }
 
 .chat-msg-container {
@@ -166,6 +184,11 @@
   border: 1px solid rgb(54, 54, 54);
 }
 
+#light .user-chat-msg,
+#light .partner-chat-msg {
+  border: none
+}
+
 .user-chat-msg {
   background-color: #fef5d4;
   color: black;
@@ -173,11 +196,21 @@
   border-bottom-right-radius: 2px;
 }
 
+#light .user-chat-msg {
+  background-color: rgb(105, 105, 253);
+  color: white;
+}
+
 .partner-chat-msg {
   background-color: #2b2b35;
   color: rgb(172, 172, 172);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 15px;
+}
+
+#light .partner-chat-msg {
+  background-color: rgb(231, 231, 231);
+  color: black;
 }
 
 .msg-date {
@@ -231,12 +264,27 @@
 }
 
 .message-input {
+  padding: 10px;
   width: 94%;
   margin: 0 20px 0 20px;
   height: 40px;
   border: none;
-  background-color: #20202a;
+  background-color: #2b2b35;
   font-size: 14px;
+  border-radius: 20px;
+  outline: none;
+}
+
+.message-input:focus {
+  color: rgb(172, 172, 172);
+}
+
+#light .message-input {
+  background-color: #d6d6d6;
+}
+
+#light .message-input:focus {
+  color: rgb(0, 0, 0);
 }
 
 .btn-container {

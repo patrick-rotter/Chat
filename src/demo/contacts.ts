@@ -18,7 +18,7 @@ export const contacts: Contact[] = [
       fName: 'Raye',
       lName: 'Penber',
       pic: 'A',
-      stories: ['&#9918;', '&#127826;'],
+      stories: ['\u{1F694}', '\u{1F970}'],
       conversation: rayesMsgs,
       unread: 3,
       lastMsg:
@@ -32,7 +32,7 @@ export const contacts: Contact[] = [
       fName: 'Michael',
       lName: 'Scott',
       pic: 'B',
-      stories: ['&#9918;'],
+      stories: ['\u{1F6B4}'],
       conversation: michaelsMsgs,
       unread: 2,
       lastMsg:
@@ -73,7 +73,7 @@ export const contacts: Contact[] = [
       fName: 'Jack',
       lName: 'Bauer',
       pic: 'D',
-      stories: [],
+      stories: ['\u{1F525}'],
       conversation: jacksMsgs,
       unread: 0,
       lastMsg:
@@ -101,7 +101,7 @@ export const contacts: Contact[] = [
       fName: 'Kierra',
       lName: 'Baz',
       pic: 'D',
-      stories: [],
+      stories: ['\u{1F64A}'],
       conversation: kierrasMsgs,
       unread: 0,
       lastMsg: 'With the result of driving it through the ventilator.',
@@ -114,7 +114,7 @@ export const contacts: Contact[] = [
       fName: 'Kassandra',
       lName: 'Roderick',
       pic: 'D',
-      stories: [],
+      stories: ['\u{1F6A1}'],
       conversation: kassandrasMsgs,
       unread: 0,
       lastMsg:

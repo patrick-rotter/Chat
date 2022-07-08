@@ -7,7 +7,7 @@ export const MediaPreview: React.FC<Media> = (props) => {
     <div className="img-container">
       <motion.img
         className="media-img"
-        whileHover={{ scale: 1.05, boxShadow: '0px 0px 3px rgb(255,255,255)' }}
+        whileHover={{ scale: 1.05 }}
         src={props.url}
         alt={props.name}
       />
