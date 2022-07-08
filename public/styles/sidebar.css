@@ -7,9 +7,8 @@
   border-right: 1px solid rgb(43, 43, 43);
 }
 
-.icon-container {
-  display: flex;
-  flex-direction: column;
+#light .sidebar-panel {
+  border-right: 1px solid rgb(196, 196, 196);
 }
 
 /* Substitute spacer for 3 colored Mac dots */
@@ -18,10 +17,41 @@
   height: 120px;
 }
 
-.icon {
-  margin: 20px 0 20px 0;
+.icon-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 100px;
+}
+
+.icon-box:hover {
   cursor: pointer;
+}
+
+.selected {
+  border-left: 3px solid #fef5d4;
+  background-image: linear-gradient(to left,
+  rgba(254, 245, 212, 0.0) 0%,
+  rgba(254, 245, 212, 0.15) 100%
+);
+}
+
+.selected-icon {
+  color: #fef5d4;
+}
+
+.icon {
   color: rgb(112, 112, 112);
+}
+
+.icon:hover {
+  color: white;
 }
 
 .add-bell-container {
@@ -32,14 +62,18 @@
 }
 
 .bell-icon {
-  color: rgba(255, 255, 255, 0.801);
   margin-bottom: 26px;
+  cursor: pointer;
+}
+
+.bell-icon:hover {
+  color: white;
 }
 
 .notification-count {
   font-family: "Arial";
   position: absolute;
-  top: 15px;
+  top: -7px;
   right: 7px;
   background-color: rgb(200, 0, 0);
   color: white;

@@ -1,24 +1,27 @@
 import React from "react";
+import { File } from "../../global/types";
+import { formatBytes } from "../../utils/util";
+import { turnFormatIntoIcon } from "../../utils/util";
 
-// TODO: Change types -> icon to mui-type, size to size in bytes, date to Date
-type FileInfo = {
-    icon: any,
-    name: string,
-    size: string,
-    date: string
-}
+export const FilePreview: React.FC<File> = (props) => {
+  const day = props.time.getDay();
+  const month = props.time.toLocaleString("default", { month: "short" });
+  const year = props.time.getFullYear();
 
-export const FilePreview: React.FC<FileInfo> = (props) => {
+  const size = formatBytes(props.size, 1);
+  const icon = turnFormatIntoIcon(props.format)
+
   return (
     <div>
       <div className="file-preview-container">
-        <div className="file-icon">{props.icon}</div>
+        <div className="file-icon">{icon}</div>
         <div className="file-info-container">
           <div className="filename">{props.name}</div>
-          <div className="file-stats">{props.size} &#183; {props.date}</div>
+          <div className="file-stats">
+            {size} &#183; {day} {month} {year}
+          </div>
         </div>
       </div>
-      
     </div>
   );
 };

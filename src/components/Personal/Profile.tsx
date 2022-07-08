@@ -1,13 +1,23 @@
-import React from "react";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import React, { useState } from 'react'
+import { Settings } from './Settings'
+import { motion } from 'framer-motion'
+import { Settings as SettingsIcon } from "react-feather"
+
 
 interface Props {}
 
 export const Profile: React.FC<Props> = () => {
-  let userName = "Patrick";
-  let status = "Busy";
+  const [rotation, setRotation] = useState(0)
+  const [showSettings, setShowSettings] = useState(false)
+  let userName = 'Patrick'
+  let status = 'Busy'
 
-// TODO: Rotate settings icon counter-clockwise and open the settings menu
+  // Rotate cogwheel on mouseclick and show settings menu
+  const handleClick = (): void => {
+    if (rotation === 0) setRotation(-90)
+    else setRotation(0)
+    setShowSettings((prevShowSettings) => !prevShowSettings)
+  }
 
   return (
     <div className="profile-container">
@@ -18,7 +28,14 @@ export const Profile: React.FC<Props> = () => {
           <div className="user-status">{status}</div>
         </div>
       </div>
-      <SettingsOutlinedIcon className="settings-btn" />
+      <motion.div
+        className="settings-btn"
+        animate={{ rotate: rotation }}
+        onClick={handleClick}
+      >
+        <SettingsIcon />
+      </motion.div>
+      <Settings onScreen={showSettings} close={handleClick} />
     </div>
-  );
-};
+  )
+}

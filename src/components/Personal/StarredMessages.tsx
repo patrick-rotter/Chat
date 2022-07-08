@@ -26,18 +26,44 @@ export const StarredMessages: React.FC<Props> = () => {
         <div className="text-see-all">See all</div>
       </div>
 
-      <StarredChatMessage
-        isUserMessage={demoMsg.isUserMessage}
-        msg={demoMsg.msg}
-        author={demoMsg.author}
-        date={demoMsg.date}
-      />
-      <StarredChatMessage
-        isUserMessage={demoMsg2.isUserMessage}
-        msg={demoMsg2.msg}
-        author={demoMsg2.author}
-        date={demoMsg2.date}
-      />
+      <div className="scroll-starred-container">
+        <StarredChatMessage
+          isUserMessage={demoMsg.isUserMessage}
+          msg={demoMsg.msg}
+          author={demoMsg.author}
+          date={demoMsg.date}
+        />
+        <StarredChatMessage
+          isUserMessage={demoMsg2.isUserMessage}
+          msg={demoMsg2.msg}
+          author={demoMsg2.author}
+          date={demoMsg2.date}
+        />
+        <StarredChatMessage
+          isUserMessage={demoMsg.isUserMessage}
+          msg={demoMsg.msg}
+          author={demoMsg.author}
+          date={demoMsg.date}
+        />
+        <StarredChatMessage
+          isUserMessage={demoMsg2.isUserMessage}
+          msg={demoMsg2.msg}
+          author={demoMsg2.author}
+          date={demoMsg2.date}
+        />
+        <StarredChatMessage
+          isUserMessage={demoMsg.isUserMessage}
+          msg={demoMsg.msg}
+          author={demoMsg.author}
+          date={demoMsg.date}
+        />
+        <StarredChatMessage
+          isUserMessage={demoMsg2.isUserMessage}
+          msg={demoMsg2.msg}
+          author={demoMsg2.author}
+          date={demoMsg2.date}
+        />
+      </div>
     </div>
   );
 };

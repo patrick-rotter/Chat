@@ -1,19 +1,16 @@
-import React from "react";
-import { FilePreview } from "./FilePreview";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import React from 'react'
+import { FilePreview } from './FilePreview'
+import { files } from '../../demo/files'
+
+/* TODO: Good idea to implement a max. of 4 files?
+In a real project this would be server-side, no?
+If there are no files, render "Nothing here yet."
+ */
 
 interface Props {}
 
 export const Files: React.FC<Props> = () => {
-  let fileCount = 25;
-
-  // Save files in array
-  let fileInfo = {
-    icon: <ArticleOutlinedIcon />,
-    name: "CurriculumVitae.pdf",
-    size: "3.7MB",
-    date: "22 Jan 2021",
-  };
+  let fileCount = files.length
 
   return (
     <div className="files-container">
@@ -24,39 +21,12 @@ export const Files: React.FC<Props> = () => {
         </div>
         <div className="text-see-all">See all</div>
       </div>
-
-      <FilePreview
-        icon={fileInfo.icon}
-        name={fileInfo.name}
-        date={fileInfo.date}
-        size={fileInfo.size}
-      />
-      <hr className="hr-seperator"></hr>
-
-      <FilePreview
-        icon={fileInfo.icon}
-        name={fileInfo.name}
-        date={fileInfo.date}
-        size={fileInfo.size}
-      />
-      <hr className="hr-seperator"></hr>
-
-      <FilePreview
-        icon={fileInfo.icon}
-        name={fileInfo.name}
-        date={fileInfo.date}
-        size={fileInfo.size}
-      />
-      <hr className="hr-seperator"></hr>
-
-      <FilePreview
-        icon={fileInfo.icon}
-        name={fileInfo.name}
-        date={fileInfo.date}
-        size={fileInfo.size}
-      />
-      <hr className="hr-seperator"></hr>
-      
+      {files.map((file) => (
+        <>
+          <FilePreview {...file} />
+          <hr className="hr-seperator"></hr>
+        </>
+      ))}
     </div>
-  );
-};
+  )
+}

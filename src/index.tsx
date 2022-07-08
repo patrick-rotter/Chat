@@ -8,3 +8,11 @@ root.render(
     <App />
   </React.StrictMode>
 )
+
+
+/* 
+TODO: 
+- Chat bubble color picker in settings
+- Light/Dark Mode in settings
+- Mobile/Tablet scaling
+*/

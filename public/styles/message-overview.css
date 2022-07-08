@@ -5,12 +5,19 @@
   height: 100vh;
 }
 
-.search-bar {
+#light .msg-overview-panel {
+  border-right: 1px solid rgb(196, 196, 196);
+}
 
+.search-bar {
   border-bottom: 1px solid rgb(43, 43, 43);
   padding: 0 23px 0 23px;
   display: grid;
   align-items: center;
+}
+
+#light .search-bar {
+  border-bottom: 1px solid rgb(196, 196, 196);
 }
 
 .search-bar-container {
@@ -38,14 +45,30 @@
   margin-left: 20px;
 }
 
-.search-icon {
-  color: rgba(255, 255, 255, 0.801);
-}
-
 /* */
 
 .stories-container {
   border-right: 1px solid rgb(43, 43, 43);
+  position: relative;
+}
+
+/* 
+Fade out effect at the right side of stories
+TODO: top: 82px is set manually -> better solution?
+*/
+.stories-container::after {
+  pointer-events: none;
+  z-index: 200;
+  position: absolute;
+  top: 82px;
+  right: 0;
+  width: 80px;
+  height: 123px;
+  content: "";
+  background-image: linear-gradient(to right,
+    rgba(32, 32, 42, 0.0) 0%,
+    rgba(32, 32, 42, 0.8) 100%
+  );
 }
 
 .text-container,
@@ -88,27 +111,9 @@
   padding-left: 23px;
 }
 
-/* .fade-out-div {
-  --mask-height: 100%;
-
-  padding-bottom: var(--mask-height);
-
-  -webkit-mask-image: linear-gradient(
-    to left,
-    transparent,
-    #20202a var(--mask-height),
-    #20202a calc(100% - var(--mask-height)),
-    transparent
-  );
-
-  mask-image: linear-gradient(
-    to left,
-    transparent,
-    #20202a var(--mask-height),
-    #20202a calc(100% - var(--mask-height)),
-    transparent
-  );
-} */
+.all-stories-scrollable::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
 
 .add-story-btn {
   margin: 18px 0 6px 0;
@@ -147,12 +152,32 @@
 /* TODO: add custom style to scrollbar */
 .messages-container {
   padding: 0 23px 0 23px;
+  position: relative;
+}
+
+.messages-container::after {
+  pointer-events: none;
+  z-index: 200;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  content: "";
+  background-image: linear-gradient(to bottom,
+    rgba(32, 32, 42, 0.0) 0%,
+    rgba(32, 32, 42, 0.8) 100%
+  );
+}
+
+/* TODO: Fix height - not setting a static height stretches the div */
+.scroll-msg-container {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
 }
 
-.messages-container::-webkit-scrollbar {
+.scroll-msg-container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
@@ -189,6 +214,7 @@
 }
 
 .chat-partner-icon {
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,6 +245,10 @@
 }
 
 .conv-msg {
+  width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 14px;
   color: rgb(112, 112, 112);
 }

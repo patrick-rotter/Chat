@@ -1,5 +1,5 @@
 import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
+import { Search } from "react-feather"
 
 interface Props {}
 
@@ -9,7 +9,7 @@ export const SearchBar: React.FC<Props> = () => {
       <div className="search-bar-container">
         <div className="logo-icon">W</div>
         <div className="app-name">WhatsApp</div>
-        <SearchIcon className="search-icon"/>
+        <Search />
       </div>
     </div>
   );

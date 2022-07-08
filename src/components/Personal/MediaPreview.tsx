@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react'
+import { Media } from '../../global/types'
+import { motion } from 'framer-motion'
 
-type Props = {
-  url: string;
-  alt: string;
-};
-
-export const MediaPreview: React.FC<Props> = (props) => {
+export const MediaPreview: React.FC<Media> = (props) => {
   return (
     <div className="img-container">
-      <img className="media-img" src={props.url} alt={props.alt} />
+      <motion.img
+        className="media-img"
+        whileHover={{ scale: 1.05, boxShadow: '0px 0px 3px rgb(255,255,255)' }}
+        src={props.url}
+        alt={props.name}
+      />
     </div>
-  );
-};
+  )
+}

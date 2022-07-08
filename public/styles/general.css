@@ -12,13 +12,36 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  font-family: "Quicksand", Arial;
+  font-family: 'Quicksand', Arial;
   font-weight: 500;
-  background-color: #20202A;
-  color: white;
+  /*  Fixed the scrollbar showing with attach file button
+  but may cause other undefined behaviour -> research!  */
+  overflow: hidden;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 100px 360px 1fr 282px;
+
+}
+
+#dark {
+  background-color: #20202a;
+  color: white;
+}
+
+#light {
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
+
+.hr-seperator {
+  margin: 0;
+  width: 100%;
+  margin: auto;
+  border: 1px solid rgba(43, 43, 43, 0.74);
+}
+
+#light .hr-seperator {
+  border: 1px solid rgb(196, 196, 196);
 }

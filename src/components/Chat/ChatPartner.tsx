@@ -1,16 +1,11 @@
-import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
-import PhoneIcon from "@mui/icons-material/Phone";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import React from 'react'
+import { Phone, Video, Search, MoreVertical } from 'react-feather'
+import { useStore } from '../../store/chatPartnerStore'
 
 interface Props {}
 
 export const ChatPartner: React.FC<Props> = () => {
-  let chatPartner = "Rehan Wangsaff";
-  let online = true;
-
-  // TODO: Hover tooltips for buttons
+  const { fName, lName, status } = useStore((state) => state.chatPartner)
 
   return (
     <div className="chat-partner">
@@ -18,29 +13,31 @@ export const ChatPartner: React.FC<Props> = () => {
         <div className="contact-info">
           <div className="contact-picture">&#128571;</div>
           <div className="name-status-container">
-            <div className="contact-name">{chatPartner}</div>
-            <div className="contact-status">{online ? "Online" : ""}</div>
+            <div className="contact-name">
+              {fName} {lName}
+            </div>
+            <div className="contact-status">{status}</div>
           </div>
         </div>
         <div className="contact-btns">
           <div className="video-container">
-            <VideoCameraFrontIcon className="contact-btn" />
+            <Video className="contact-btn" />
             <div className="tooltip">Video Chat</div>
           </div>
           <div className="phone-container">
-            <PhoneIcon className="contact-btn" />
+            <Phone className="contact-btn" />
             <div className="tooltip">Voice Chat</div>
           </div>
           <div className="search-container">
-            <SearchIcon className="contact-btn" />
+            <Search className="contact-btn" />
             <div className="tooltip">Search</div>
           </div>
           <div className="dots-container">
-            <MoreVertIcon className="more-btn" />
+            <MoreVertical className="more-btn" />
             <div className="tooltip">More</div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { ChatHistory } from './ChatHistory';
 import { ChatInput } from './ChatInput';
 import { ChatPartner } from './ChatPartner'
 
@@ -6,7 +7,7 @@ export const Chat: React.FC = () => {
         return (
             <div className="chat-panel">
                 <ChatPartner />
-                <div className='chat-history' >div 2</div>
+                <ChatHistory />
                 <ChatInput />
             </div>
         );
