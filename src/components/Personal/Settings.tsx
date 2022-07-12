@@ -29,7 +29,7 @@ export const Settings: React.FC<Props> = (props) => {
     <AnimatePresence>
       {props.onScreen && (
         <motion.div
-          className="settings-container"
+          className="modal settings-container"
           variants={settingsVariants}
           initial="hidden"
           animate="visible"

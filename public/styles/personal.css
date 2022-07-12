@@ -1,6 +1,7 @@
 .personal-container {
   display: grid;
-  grid-template-rows: 96px 1fr;
+  grid-template-rows: 96px minmax(0, 1fr);
+  height: 100vh;
 }
 
 .profile-container {
@@ -9,7 +10,6 @@
   justify-content: space-between;
   margin: 0 23px 0 23px;
 }
-
 
 .name-pic-container {
   display: flex;
@@ -56,28 +56,24 @@
 }
 
 .settings-btn:hover {
-  color: white
+  color: white;
 }
 
 .settings-container {
+  padding: 10px;
   width: 160px;
-  padding: 15px;
-  right:35px;
+  right: 35px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  background-color: #17171f;
-  color: rgb(172, 172, 172);
-  border: 1px solid rgb(54, 54, 54);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   z-index: 200;
 }
 
 .settings-text {
-  margin: 10px 0 10px 0;
+  margin: 10px;
   font-size: 14px;
 }
 
@@ -161,11 +157,15 @@
   margin: 10px 13px 7px 13px;
   border-radius: 10px;
   transition: background-color 0.15s;
+  cursor: pointer;
 }
 
 .file-preview-container:hover {
-  cursor: pointer;
   background-color: #454555;
+}
+
+#light .file-preview-container:hover {
+  background-color: rgb(201, 201, 201);
 }
 
 .file-icon {
@@ -179,17 +179,33 @@
   margin-right: 12px;
 }
 
+#light .file-icon {
+  background-color: rgb(119, 119, 119);
+  color: white;
+}
+
 .file-info-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.nothing-here-txt {
+  margin-left: 23px;
+  color: rgb(119, 119, 119);
+}
+
 /* Starred Messages */
 
-/* TODO: Gradient not showing correctly atm because of scrolling bug */
+.media-file-starred-container {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
 .starred-messages-container {
   position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
 }
 
 .starred-messages-container::after {
@@ -199,11 +215,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 150px;
-  content: "";
-  background-image: linear-gradient(to bottom,
-    rgba(32, 32, 42, 0.0) 0%,
+  height: 60px;
+  content: '';
+  background-image: linear-gradient(
+    to bottom,
+    rgba(32, 32, 42, 0) 0%,
     rgba(32, 32, 42, 0.8) 100%
+  );
+}
+
+#light .starred-messages-container::after {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(231, 231, 231, 0) 0%,
+    rgba(231, 231, 231, 0.8) 100%
   );
 }
 
@@ -218,7 +243,7 @@
 
 #light .starred-user-msg,
 #light .starred-partner-msg {
-  border: none
+  border: none;
 }
 
 .starred-user-msg {
@@ -249,17 +274,13 @@
   margin: 7px 0 10px 0;
 }
 
-/* TODO: fix scrolling like messages...  */
-
 .scroll-starred-container {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
+  overflow: auto;
   margin: 0 23px 0 23px;
 }
 
 .scroll-starred-container::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
-
-

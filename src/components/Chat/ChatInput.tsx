@@ -28,7 +28,7 @@ export const ChatInput: React.FC<Props> = () => {
         <Smile />
         <Mic />
         <div className="send-btn">
-          <Send />
+          <Send className='send-icon' />
         </div>
       </div>
     </div>

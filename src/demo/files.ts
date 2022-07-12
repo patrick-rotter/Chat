@@ -28,6 +28,5 @@ export const files: File[] = [
         name: "NewDesign.fig",
         size: 4_315_132.2,
         time: new Date(92, 11, 12, 13, 11, 12, 12)
-    },
-    
+    }, 
 ]

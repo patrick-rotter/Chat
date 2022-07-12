@@ -22,7 +22,6 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 100px 360px 1fr 282px;
-
 }
 
 #dark {
@@ -42,4 +41,12 @@ body {
 
 #light .hr-seperator {
   border: 1px solid rgb(196, 196, 196);
+}
+
+.modal {
+  position: absolute;
+  background-color: #20202a;
+  color: rgb(172, 172, 172);
+  border: 1px solid rgb(54, 54, 54);
+  font-size: 14px;
 }

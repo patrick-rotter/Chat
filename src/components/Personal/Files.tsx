@@ -2,11 +2,6 @@ import React from 'react'
 import { FilePreview } from './FilePreview'
 import { files } from '../../demo/files'
 
-/* TODO: Good idea to implement a max. of 4 files?
-In a real project this would be server-side, no?
-If there are no files, render "Nothing here yet."
- */
-
 interface Props {}
 
 export const Files: React.FC<Props> = () => {
@@ -21,12 +16,16 @@ export const Files: React.FC<Props> = () => {
         </div>
         <div className="text-see-all">See all</div>
       </div>
-      {files.map((file) => (
-        <>
-          <FilePreview {...file} />
-          <hr className="hr-seperator"></hr>
-        </>
-      ))}
+      {fileCount === 0 ? (
+        <div className='nothing-here-txt'>Nothing here yet...</div>
+      ) : (
+        files.map((file) => (
+          <>
+            <FilePreview {...file} />
+            <hr className="hr-seperator"></hr>
+          </>
+        ))
+      )}
     </div>
   )
 }

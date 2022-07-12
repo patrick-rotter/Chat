@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import {
   MessageSquare,
   Calendar,
@@ -8,9 +8,15 @@ import {
   Bell
 } from 'react-feather'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
+import { Notifications } from './Notifications'
 
 const Sidebar: FC = () => {
+  const [showNotifications, setShowNotifications] = useState(false)
   let notificationCount = 3
+
+  const handleClick = (): void => {
+    setShowNotifications((prevShowNotifications) => !prevShowNotifications)
+  }
 
   return (
     <div className="sidebar-panel">
@@ -36,7 +42,8 @@ const Sidebar: FC = () => {
         </div>
       </div>
       <div className="add-bell-container">
-        <Bell className="icon bell-icon" />
+        <Notifications onScreen={showNotifications} />
+        <Bell className="icon bell-icon" onClick={handleClick} />
         {notificationCount !== 0 && (
           <div className="notification-count">{notificationCount}</div>
         )}

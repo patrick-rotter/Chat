@@ -28,7 +28,7 @@ export const AttachFile: React.FC<Props> = (props) => {
     <AnimatePresence>
       {props.onScreen && (
         <motion.div
-          className="insert-file-container"
+          className="modal insert-file-container"
           variants={attachVariants}
           initial="hidden"
           animate="visible"
