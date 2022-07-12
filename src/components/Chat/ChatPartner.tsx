@@ -1,11 +1,11 @@
 import React from 'react'
 import { Phone, Video, Search, MoreVertical } from 'react-feather'
-import { useStore } from '../../store/chatPartnerStore'
+import { useStoreChatPartner } from '../../store/store'
 
 interface Props {}
 
 export const ChatPartner: React.FC<Props> = () => {
-  const { fName, lName, status } = useStore((state) => state.chatPartner)
+  const { fName, lName, status } = useStoreChatPartner((state) => state.chatPartner)
 
   return (
     <div className="chat-partner">

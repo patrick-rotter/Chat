@@ -1,28 +1,30 @@
-import React from "react";
+import React from 'react'
+import { ChatMsg } from '../../global/types'
 
-type Props = {
-  isUserMessage: boolean;
-  msg: string;
-  author: string;
-  date: string;
-};
+export const StarredChatMessage: React.FC<ChatMsg> = (props) => {
+  const author = props.userIsAuthor ? 'You' : props.author
 
-export const StarredChatMessage: React.FC<Props> = (props) => {
+  const day = props.time.getDay()
+  const month = props.time.toLocaleString('default', { month: 'short' })
+  const year = props.time.getFullYear()
+  const hour = props.time.getHours()
+  const min = props.time.getMinutes()
+
   return (
     <div className="starred-chat-msg-container">
       <div
         className={
-          props.isUserMessage ? "starred-user-msg" : "starred-partner-msg"
+          props.userIsAuthor ? 'starred-user-msg' : 'starred-partner-msg'
         }
       >
-        {props.msg}
+        {props.text}
       </div>
       <div
-        style={{ textAlign: !props.isUserMessage ? "left" : "right" }}
+        style={{ textAlign: !props.userIsAuthor ? 'left' : 'right' }}
         className="starred-msg-info"
       >
-        {props.author} &#183; {props.date}
+        {author} &#183; {day} {month} {year} &nbsp; {hour}:{min}
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStore } from '../../store/chatPartnerStore'
+import { useStoreChatPartner } from '../../store/store'
 
 type Props = {
   userId: number
@@ -45,7 +45,7 @@ export const Conversation: React.FC<Props> = (props) => {
   const color = colors[Math.floor(Math.random() * colors.length)]
 
   // Extract the select method from Zustand - selects a current chat partner (based on userId)
-  const { select } = useStore()
+  const { select } = useStoreChatPartner()
 
   return (
     <div>

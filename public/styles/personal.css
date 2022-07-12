@@ -61,7 +61,7 @@
 
 .settings-container {
   padding: 10px;
-  width: 160px;
+  width: 190px;
   right: 35px;
   display: flex;
   flex-direction: column;
@@ -75,6 +75,8 @@
 .settings-text {
   margin: 10px;
   font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .settings-text:hover {

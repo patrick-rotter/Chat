@@ -1,6 +1,7 @@
 export type ChatMsg = {
     key: number,
     userIsAuthor: boolean,
+    author?: string,
     text: string,
     time: Date
 }
