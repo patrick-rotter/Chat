@@ -11,7 +11,7 @@ type ChatPartnerState = {
 export const useStoreChatPartner = create<ChatPartnerState>((set) => ({
   chatPartner: contacts[0],
   select: (userId) =>
-    set({ chatPartner: contacts.find((o) => o.userId === userId) })
+    set({ chatPartner: contacts.find((o) => o.userId === userId) }),
 }))
 
 // Zustand for storing starred messages
@@ -32,9 +32,9 @@ export const useStoreStarredMsgs = create<StarredMsgsState>((set) => ({
     },
     {
       key: 80,
-      text: "After that, it will appear in this section! :)",
+      text: 'After that, it will appear in this section! :)',
       time: new Date(90, 5, 14, 13, 11, 11, 5),
-      userIsAuthor: true,
+      userIsAuthor: true
     }
   ],
   addStarredMsg: (msg: ChatMsg) => {

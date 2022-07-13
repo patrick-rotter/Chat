@@ -5,13 +5,13 @@ import { useStoreChatPartner } from '../../store/store'
 interface Props {}
 
 export const ChatPartner: React.FC<Props> = () => {
-  const { fName, lName, status } = useStoreChatPartner((state) => state.chatPartner)
+  const { fName, lName, status, icon, color } = useStoreChatPartner((state) => state.chatPartner)
 
   return (
     <div className="chat-partner">
       <div className="chat-partner-container">
         <div className="contact-info">
-          <div className="contact-picture">&#128571;</div>
+          <div className="contact-picture" style={{backgroundColor: color}} >{icon}</div>
           <div className="name-status-container">
             <div className="contact-name">
               {fName} {lName}
