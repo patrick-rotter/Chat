@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Settings } from './Settings'
 import { motion } from 'framer-motion'
-import { Settings as SettingsIcon } from "react-feather"
-
+import { Settings as SettingsIcon } from 'react-feather'
+import { useClickAway } from 'react-use'
 
 interface Props {}
 
@@ -11,6 +11,13 @@ export const Profile: React.FC<Props> = () => {
   const [showSettings, setShowSettings] = useState(false)
   let userName = 'Patrick'
   let status = 'Busy'
+
+  // Detects a click outside the parent div and closes the window
+  const ref = useRef(null)
+  useClickAway(ref, () => {
+    setRotation(0)
+    setShowSettings(false)
+  })
 
   // Rotate cogwheel on mouseclick and show settings menu
   const handleClick = (): void => {
@@ -28,14 +35,16 @@ export const Profile: React.FC<Props> = () => {
           <div className="user-status">{status}</div>
         </div>
       </div>
-      <motion.div
-        className="settings-btn"
-        animate={{ rotate: rotation }}
-        onClick={handleClick}
-      >
-        <SettingsIcon />
-      </motion.div>
-      <Settings onScreen={showSettings} close={handleClick} />
+      <div ref={ref} >
+        <motion.div
+          className="settings-btn"
+          animate={{ rotate: rotation }}
+          onClick={handleClick}
+        >
+          <SettingsIcon />
+        </motion.div>
+        <Settings onScreen={showSettings} close={handleClick} />
+      </div>
     </div>
   )
 }

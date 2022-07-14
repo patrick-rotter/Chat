@@ -20,7 +20,7 @@ const Sidebar: FC = () => {
 
   return (
     <div className="sidebar-panel">
-      <div className="spacer">x</div>
+      <div className="spacer not-selectable">x</div>
       <div className="icon-container">
         <div className="icon-box selected">
           <MessageSquare className="selected-icon" />

@@ -7,8 +7,8 @@ export const SearchBar: React.FC<Props> = () => {
   return (
     <div className="search-bar">
       <div className="search-bar-container">
-        <div className="logo-icon">W</div>
-        <div className="app-name">WhatsApp</div>
+        <div className="logo-icon">T</div>
+        <div className="app-name">Telegraph</div>
         <Search />
       </div>
     </div>

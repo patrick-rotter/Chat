@@ -23,7 +23,7 @@ export const contacts: Contact[] = [
       conversation: rayesMsgs,
       unread: 3,
       lastMsg:
-        'To me, who knew his every mood and habit, his attitude and manner told their own story.',
+        'Subtle enough and horrible enough. When a doctor does go wrong he is the first of criminals.',
       lastMsgDate: new Date(90, 11, 12, 12, 14, 12, 12)
     },
     {
@@ -82,7 +82,7 @@ export const contacts: Contact[] = [
       conversation: jacksMsgs,
       unread: 0,
       lastMsg:
-        'Holmes was for the moment as startled as I. His hand closed like a vice upon my wrist in his agitation. Then he broke into a low laugh and put his lips to my ear.',
+        'The lady could not move her bed. It must always be in the same relative position to the ventilator and to the rope—or so we may call it, since it was clearly never meant for a bell-pull.',
       lastMsgDate: new Date(93, 11, 12, 12, 14, 12, 12)
     },
     {

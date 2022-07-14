@@ -6,15 +6,20 @@ import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded'
 import { ChatMsg } from '../../global/types'
 import { useStoreStarredMsgs } from '../../store/store'
 
-export const ContextModal: React.FC<ChatMsg> = (props) => {
+type Props = {
+  msg: ChatMsg
+}
+
+export const ContextModal: React.FC<Props> = (props) => {
   const { starredMsgs, addStarredMsg } = useStoreStarredMsgs()
+
 
   return (
     <div className="modal context-modal-container">
       <div
         className="context-modal-text not-selectable"
         onClick={() => {
-          addStarredMsg(props)
+          addStarredMsg(props.msg)
           console.log(starredMsgs)
         }}
       >

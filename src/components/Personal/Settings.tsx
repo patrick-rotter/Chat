@@ -10,11 +10,11 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 
 const settingsVariants = {
   hidden: {
-    y: -250,
+    y: -350,
     opacity: 0
   },
   visible: {
-    y: +150,
+    y: +20,
     opacity: 1,
     transition: {
       type: 'spring',

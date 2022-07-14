@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { ChatMsg } from '../../global/types'
 import { MoreHorizontal, Smile } from 'react-feather'
 import { ContextModal } from './ContextModal'
+import { useClickAway } from 'react-use'
 
 export const ChatMessage: React.FC<ChatMsg> = (props) => {
   const day = props.time.getDay()
@@ -13,6 +14,12 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
   const [isHovering, setIsHovering] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
+  // Close modal with a click anywhere on the screen
+  const ref = useRef(null)
+  useClickAway(ref, () => {
+    setShowModal(false)
+  })
+
   const handleMouseOver = (): void => {
     setIsHovering(true)
   }
@@ -21,7 +28,6 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
     setIsHovering(false)
   }
 
-  // TODO: Modal has to be closed manually, need a better solution
   const handleClick = (): void => {
     setShowModal((prevShowModal) => !prevShowModal)
   }
@@ -36,7 +42,7 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
       {props.userIsAuthor ? (
         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
           <div className="chat-msg-container right-aligned">
-            <div className="context-menu-container">
+            <div className="context-menu-container" ref={ref}>
               {isHovering && (
                 <div className="context-menu">
                   <div>
@@ -44,11 +50,11 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
                       className="context-icon"
                       onClick={handleClick}
                     />
-                    {showModal && <ContextModal {...props} />}
                   </div>
                   <Smile className="context-icon" />
                 </div>
               )}
+              {showModal && <ContextModal msg={props} />}
             </div>
 
             <div className="user-chat-msg">{props.text}</div>
@@ -64,6 +70,7 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
             <div
               style={{ justifyContent: 'start' }}
               className="context-menu-container"
+              ref={ref}
             >
               {isHovering && (
                 <div className="context-menu">
@@ -73,10 +80,10 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
                       className="context-icon"
                       onClick={handleClick}
                     />
-                    {showModal && <ContextModal {...props} />}
                   </div>
                 </div>
               )}
+              {showModal && <ContextModal msg={props} />}
             </div>
           </div>
           <div style={{ textAlign: 'left' }} className="msg-date">

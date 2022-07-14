@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Paperclip, Smile, Mic, Send } from 'react-feather'
 import { AttachFile } from './AttachFile'
+import { useClickAway } from 'react-use'
 
 interface Props {}
 
 export const ChatInput: React.FC<Props> = () => {
   const [showAttach, setShowAttach] = useState(false)
   const [input, setInput] = useState('')
+
+  // Close modal with a click anywhere on the screen
+  const ref = useRef(null)
+  useClickAway(ref, () => {
+    setShowAttach(false)
+  })
 
   const handleClick = (): void => {
     setShowAttach((prevShowInsert) => !prevShowInsert)
@@ -24,9 +31,9 @@ export const ChatInput: React.FC<Props> = () => {
 
   return (
     <div className="chat-input-container">
-      <AttachFile onScreen={showAttach} />
-      <div className="attach-btn" onClick={handleClick}>
+      <div className="attach-btn" onClick={handleClick} ref={ref} >
         <Paperclip />
+        <AttachFile onScreen={showAttach} />
       </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input

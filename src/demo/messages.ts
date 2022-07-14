@@ -66,7 +66,49 @@ export const rayesMsgs: ChatMsg[] = [
     userIsAuthor: true,
     text: 'To me, who knew his every mood and habit, his attitude and manner told their own story.',
     time: new Date(90, 11, 12, 12, 14, 12, 12)
-  }
+  },
+  {
+    key: 12,
+    userIsAuthor: false,
+    text: 'From outside came the occasional cry of a night-bird, and once at our very window a long drawn catlike whine, which told us that the cheetah was indeed at liberty.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 13,
+    userIsAuthor: true,
+    text: 'I could, however, see that his face was deadly pale and filled with horror and loathing. ',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 14,
+    userIsAuthor: true,
+    text: 'With a grave face he lit the lamp and led the way down the corridor. Twice he struck at the chamber door without any reply from within.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 15,
+    userIsAuthor: true,
+    text: 'One night—it was on the twentieth of March, 1888—I was returning from a journey to a patient.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 16,
+    userIsAuthor: false,
+    text: 'Did you observe anything very peculiar about that bed?',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 17,
+    userIsAuthor: true,
+    text: 'The lady could not move her bed. It must always be in the same relative position to the ventilator and to the rope—or so we may call it, since it was clearly never meant for a bell-pull.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 18,
+    userIsAuthor: true,
+    text: 'Subtle enough and horrible enough. When a doctor does go wrong he is the first of criminals.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
 ]
 
 export const michaelsMsgs: ChatMsg[] = [
@@ -264,7 +306,49 @@ export const jacksMsgs: ChatMsg[] = [
     userIsAuthor: false,
     text: 'Holmes was for the moment as startled as I. His hand closed like a vice upon my wrist in his agitation. Then he broke into a low laugh and put his lips to my ear.',
     time: new Date(90, 11, 12, 12, 14, 12, 12)
-  }
+  },
+  {
+    key: 15,
+    userIsAuthor: false,
+    text: 'I took out my revolver and laid it on the corner of the table.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 16,
+    userIsAuthor: false,
+    text: 'From outside came the occasional cry of a night-bird, and once at our very window a long drawn catlike whine, which told us that the cheetah was indeed at liberty.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 17,
+    userIsAuthor: true,
+    text: 'I could, however, see that his face was deadly pale and filled with horror and loathing. ',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 18,
+    userIsAuthor: true,
+    text: 'With a grave face he lit the lamp and led the way down the corridor. Twice he struck at the chamber door without any reply from within.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 19,
+    userIsAuthor: true,
+    text: 'One night—it was on the twentieth of March, 1888—I was returning from a journey to a patient.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 20,
+    userIsAuthor: false,
+    text: 'Did you observe anything very peculiar about that bed?',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
+  {
+    key: 21,
+    userIsAuthor: true,
+    text: 'The lady could not move her bed. It must always be in the same relative position to the ventilator and to the rope—or so we may call it, since it was clearly never meant for a bell-pull.',
+    time: new Date(90, 11, 12, 12, 14, 12, 12)
+  },
 ]
 
 export const lorindasMsgs: ChatMsg[] = [

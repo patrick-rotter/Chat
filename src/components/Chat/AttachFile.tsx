@@ -6,10 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 const attachVariants = {
   hidden: {
     y: +250,
+    x: +56,
     opacity: 0
   },
   visible: {
-    y: -130,
+    y: -120,
+    x: +56,
     opacity: 1,
     transition: {
       type: 'spring',
