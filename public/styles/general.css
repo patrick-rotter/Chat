@@ -51,6 +51,11 @@ body {
   font-size: 14px;
 }
 
+#light .modal {
+  background-color: #cfcfcf;
+  color: black;
+}
+
 .not-selectable {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */

@@ -258,6 +258,7 @@
 #light .starred-user-msg {
   background-color: rgb(105, 105, 253);
   color: white;
+  border: 1px solid black;
 }
 
 .starred-partner-msg {
@@ -270,6 +271,7 @@
 #light .starred-partner-msg {
   background-color: rgb(231, 231, 231);
   color: black;
+  border: 1px solid black;
 }
 
 .starred-msg-info {

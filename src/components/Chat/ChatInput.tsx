@@ -9,7 +9,7 @@ export const ChatInput: React.FC<Props> = () => {
   const [showAttach, setShowAttach] = useState(false)
   const [input, setInput] = useState('')
 
-  // Close modal with a click anywhere on the screen
+  // Detects a click outside the parent div and closes the window
   const ref = useRef(null)
   useClickAway(ref, () => {
     setShowAttach(false)

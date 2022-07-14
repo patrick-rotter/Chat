@@ -13,7 +13,6 @@ type Props = {
 export const ContextModal: React.FC<Props> = (props) => {
   const { starredMsgs, addStarredMsg } = useStoreStarredMsgs()
 
-
   return (
     <div className="modal context-modal-container">
       <div

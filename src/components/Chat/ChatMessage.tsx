@@ -14,7 +14,7 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
   const [isHovering, setIsHovering] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
-  // Close modal with a click anywhere on the screen
+  // Detects a click outside the parent div and closes the window
   const ref = useRef(null)
   useClickAway(ref, () => {
     setShowModal(false)
