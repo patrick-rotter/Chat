@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { contacts } from '../../demo/contacts'
 import { Story } from './Story'
+import useDraggableScroll from 'use-draggable-scroll'
 
 interface Props {}
 
 export const Stories: React.FC<Props> = () => {
-  // TODO: implement react draggable instead of scrollbar
+  // Allows dragging for horizontal scroll
+  const ref = useRef(null)
+  const { onMouseDown } = useDraggableScroll(ref)
 
   return (
-    <div className="stories-container" >
+    <div className="stories-container">
       <div className="stories-text-container">
         <div className="stories-text">Stories</div>
         <div className="more-btn">More &nbsp; &#62;</div>
       </div>
-      <div className="all-stories-scrollable">
+      <div
+        className="all-stories-scrollable"
+        ref={ref}
+        onMouseDown={onMouseDown}
+      >
         <div className="single-story-container">
           <div className="add-story-btn">+</div>
           <div className="text-add-story">Add</div>

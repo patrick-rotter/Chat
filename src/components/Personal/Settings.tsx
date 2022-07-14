@@ -73,7 +73,7 @@ export const Settings: React.FC<Props> = (props) => {
             onClick={() => props.close()}
           >
             <CloseOutlinedIcon />
-            &nbsp; Close Menu
+            &nbsp; Close
           </div>
         </motion.div>
       )}
