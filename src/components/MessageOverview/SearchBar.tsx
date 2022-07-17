@@ -1,9 +1,7 @@
 import React from 'react'
 import { Search } from 'react-feather'
 
-interface Props {}
-
-export const SearchBar: React.FC<Props> = () => {
+export const SearchBar: React.FC = () => {
   return (
     <div className="search-bar">
       <div className="search-bar-container">

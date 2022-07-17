@@ -15,21 +15,25 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
   const [showModal, setShowModal] = useState(false)
 
   // Detects a click outside the parent div and closes the window
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement | null>(null)
   useClickAway(ref, () => {
     setShowModal(false)
   })
 
-  const handleMouseOver = (): void => {
+  const handleMouseOver = () => {
     setIsHovering(true)
   }
 
-  const handleMouseOut = (): void => {
+  const handleMouseOut = () => {
     setIsHovering(false)
   }
 
-  const handleClick = (): void => {
+  const handleClick = () => {
     setShowModal((prevShowModal) => !prevShowModal)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
   }
 
   /* Returns a chat bubble with a different style for user msgs
@@ -54,7 +58,9 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
                   <Smile className="context-icon" />
                 </div>
               )}
-              {showModal && <ContextModal msg={props} />}
+              {showModal && (
+                <ContextModal msg={props} closeModal={closeModal} />
+              )}
             </div>
             <div className="user-chat-msg">{props.text}</div>
           </div>
@@ -82,7 +88,9 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
                   </div>
                 </div>
               )}
-              {showModal && <ContextModal msg={props} />}
+              {showModal && (
+                <ContextModal msg={props} closeModal={closeModal} />
+              )}
             </div>
           </div>
           <div style={{ textAlign: 'left' }} className="msg-date">

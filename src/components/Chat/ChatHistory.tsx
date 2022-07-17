@@ -3,17 +3,16 @@ import { ChatMessage } from './ChatMessage'
 // import { SeperatorLine } from "./SeperatorLine";
 import { useStore } from '../../store'
 
-type Props = {}
-
-export const ChatHistory: React.FC<Props> = () => {
+export const ChatHistory: React.FC = () => {
   const { fName, conversation } = useStore((state) => state.chatPartner)
   const bottomRef = useRef<null | HTMLDivElement>(null)
 
   // Scrolls to the last chat message at 1st render and each time a message is received
   useEffect(() => {
     if (bottomRef.current === null) {
-    } else
+    } else {
       bottomRef!.current!.scrollIntoView({ block: 'end', behavior: 'smooth' })
+    }
   }, [conversation])
 
   return (

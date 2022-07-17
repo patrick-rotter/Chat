@@ -3,11 +3,7 @@ import MoveToInboxIcon from '@mui/icons-material/MoveToInbox'
 import { Conversation } from './Conversation'
 import { contacts } from '../../fixtures/contacts'
 
-interface Props {}
-
-// TODO: Component rerenders on every click - why?
-
-export const Messages: React.FC<Props> = () => {
+export const Messages: React.FC = () => {
   return (
     <div className="messages-container">
       <div className="text-container">

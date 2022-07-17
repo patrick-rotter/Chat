@@ -2,11 +2,9 @@ import React from 'react'
 import { MediaPreview } from './MediaPreview'
 import { media } from '../../fixtures/media'
 
-interface Props {}
-
 const mediaCount = 20
 
-export const Media: React.FC<Props> = () => {
+export const Media: React.FC = () => {
   return (
     <div className="media-container">
       <div className="personal-text-container">

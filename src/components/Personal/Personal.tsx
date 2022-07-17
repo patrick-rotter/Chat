@@ -1,13 +1,10 @@
-import React from "react";
-import { Files } from "./Files";
-import { Media } from "./Media";
-import { Profile } from "./Profile";
-import { StarredMessages } from "./StarredMessages";
+import React from 'react'
+import { Files } from './Files'
+import { Media } from './Media'
+import { Profile } from './Profile'
+import { StarredMessages } from './StarredMessages'
 
-interface Props {}
-
-// TODO: Rename component...
-export const Personal: React.FC<Props> = () => {
+export const Personal: React.FC = () => {
   return (
     <div className="personal-container">
       <Profile />
@@ -17,5 +14,5 @@ export const Personal: React.FC<Props> = () => {
         <StarredMessages />
       </div>
     </div>
-  );
-};
+  )
+}

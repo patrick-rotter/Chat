@@ -4,26 +4,27 @@ import { motion } from 'framer-motion'
 import { Settings as SettingsIcon } from 'react-feather'
 import { useClickAway } from 'react-use'
 
-interface Props {}
-
 const userName = 'Patrick'
 const status = 'Busy'
 
-export const Profile: React.FC<Props> = () => {
+export const Profile: React.FC = () => {
   const [rotation, setRotation] = useState(0)
   const [showSettings, setShowSettings] = useState(false)
 
   // Detects a click outside the parent div and closes the window
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement | null>(null)
   useClickAway(ref, () => {
     setRotation(0)
     setShowSettings(false)
   })
 
   // Rotate cogwheel on mouseclick and show settings menu
-  const handleClick = (): void => {
-    if (rotation === 0) setRotation(-90)
-    else setRotation(0)
+  const handleClick = () => {
+    if (rotation === 0) {
+      setRotation(-90)
+    } else {
+      setRotation(0)
+    }
     setShowSettings((prevShowSettings) => !prevShowSettings)
   }
 

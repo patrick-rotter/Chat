@@ -2,9 +2,7 @@ import React from 'react'
 import { StarredChatMessage } from './StarredChatMessage'
 import { useStore } from '../../store'
 
-interface Props {}
-
-export const StarredMessages: React.FC<Props> = () => {
+export const StarredMessages: React.FC = () => {
   const { starredMsgs } = useStore()
 
   return (

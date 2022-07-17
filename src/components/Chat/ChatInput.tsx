@@ -3,27 +3,25 @@ import { Paperclip, Smile, Mic, Send } from 'react-feather'
 import { AttachFile } from './AttachFile'
 import { useClickAway } from 'react-use'
 
-interface Props {}
-
-export const ChatInput: React.FC<Props> = () => {
+export const ChatInput: React.FC = () => {
   const [showAttach, setShowAttach] = useState(false)
   const [input, setInput] = useState('')
 
   // Detects a click outside the parent div and closes the window
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement | null>(null)
   useClickAway(ref, () => {
     setShowAttach(false)
   })
 
-  const handleClick = (): void => {
+  const handleClick = () => {
     setShowAttach((prevShowInsert) => !prevShowInsert)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e?.target.value)
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     console.log(input)
     setInput('')
     e.preventDefault()
@@ -31,7 +29,7 @@ export const ChatInput: React.FC<Props> = () => {
 
   return (
     <div className="chat-input-container">
-      <div className="attach-btn" onClick={handleClick} ref={ref} >
+      <div className="attach-btn" onClick={handleClick} ref={ref}>
         <Paperclip />
         <AttachFile onScreen={showAttach} />
       </div>

@@ -15,7 +15,7 @@ const notificationCount = 3
 const Sidebar: FC = () => {
   const [showNotifications, setShowNotifications] = useState(false)
 
-  const handleClick = (): void => {
+  const handleClick = () => {
     setShowNotifications((prevShowNotifications) => !prevShowNotifications)
   }
 

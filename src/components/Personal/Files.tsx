@@ -2,9 +2,7 @@ import React from 'react'
 import { FilePreview } from './FilePreview'
 import { files } from '../../fixtures/files'
 
-interface Props {}
-
-export const Files: React.FC<Props> = () => {
+export const Files: React.FC = () => {
   const fileCount = files.length
 
   return (

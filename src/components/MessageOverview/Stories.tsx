@@ -3,9 +3,7 @@ import { contacts } from '../../fixtures/contacts'
 import { Story } from './Story'
 import useDraggableScroll from 'use-draggable-scroll'
 
-interface Props {}
-
-export const Stories: React.FC<Props> = () => {
+export const Stories: React.FC = () => {
   // Allows dragging for horizontal scroll
   const ref = useRef(null)
   const { onMouseDown } = useDraggableScroll(ref)

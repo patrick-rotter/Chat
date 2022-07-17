@@ -8,10 +8,11 @@ import { useStore } from '../../store'
 
 type Props = {
   msg: ChatMsg
+  closeModal: () => void
 }
 
 export const ContextModal: React.FC<Props> = (props) => {
-  const { starredMsgs, addStarredMsg } = useStore()
+  const { addStarredMsg } = useStore()
 
   return (
     <div className="modal context-modal-container">
@@ -19,7 +20,7 @@ export const ContextModal: React.FC<Props> = (props) => {
         className="context-modal-text not-selectable"
         onClick={() => {
           addStarredMsg(props.msg)
-          console.log(starredMsgs)
+          props.closeModal()
         }}
       >
         <StarOutlinedIcon />

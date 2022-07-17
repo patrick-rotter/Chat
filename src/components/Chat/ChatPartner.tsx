@@ -2,9 +2,7 @@ import React from 'react'
 import { Phone, Video, Search, MoreVertical } from 'react-feather'
 import { useStore } from '../../store'
 
-interface Props {}
-
-export const ChatPartner: React.FC<Props> = () => {
+export const ChatPartner: React.FC = () => {
   const { fName, lName, status, icon, color } = useStore(
     (state) => state.chatPartner
   )
