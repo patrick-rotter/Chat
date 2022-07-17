@@ -10,7 +10,7 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 
 const settingsVariants = {
   hidden: {
-    y: -350,
+    y: -120,
     opacity: 0
   },
   visible: {

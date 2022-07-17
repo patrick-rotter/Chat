@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const notificationVariants = {
   hidden: {
-    x: -250,
-    y: -140,
+    x: -50,
+    y: -120,
     opacity: 0
   },
   visible: {
-    x: +100,
-    y: -140,
+    x: +50,
+    y: -120,
     opacity: 1,
     transition: {
       type: 'spring',
@@ -28,13 +28,19 @@ export const Notifications: React.FC<Props> = (props) => {
     <AnimatePresence>
       {props.onScreen && (
         <motion.div
-          className="modal insert-file-container"
+          className="modal notifications-container"
           variants={notificationVariants}
           initial="hidden"
           animate="visible"
           exit="hidden"
         >
-          <div className="insert-box">You have 3 notifications!</div>
+          <div className="insert-box">
+            &#128058; Alex just joined Telegraph!
+          </div>
+          <hr className="hr-seperator"></hr>
+          <div className="insert-box">
+            &#128059; Ellie just joined Telegraph!
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

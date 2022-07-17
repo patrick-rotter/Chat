@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const attachVariants = {
   hidden: {
-    y: +250,
+    y: +60,
     x: +56,
     opacity: 0
   },

@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useRef } from 'react'
+import { useClickAway } from 'react-use'
 import {
   MessageSquare,
   Calendar,
@@ -11,10 +12,14 @@ import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
 import { Notifications } from './Notifications'
 import '../../styles/sidebar.css'
 
-const notificationCount = 3
+const notificationCount = 2
 
 const Sidebar: FC = () => {
   const [showNotifications, setShowNotifications] = useState(false)
+  const ref = useRef<HTMLDivElement | null>(null)
+  useClickAway(ref, () => {
+    setShowNotifications(false)
+  })
 
   const handleClick = () => {
     setShowNotifications((prevShowNotifications) => !prevShowNotifications)
@@ -44,12 +49,14 @@ const Sidebar: FC = () => {
         </div>
       </div>
       <div className="add-bell-container">
-        <Notifications onScreen={showNotifications} />
-        <Bell className="icon bell-icon" onClick={handleClick} />
-        <div className="notification-count not-selectable">
-          {notificationCount}
+        <div className="notification-btn-container" ref={ref}>
+          <Notifications onScreen={showNotifications} />
+          <Bell className="icon bell-icon" onClick={handleClick} />
+          <div className="notification-count not-selectable">
+            {notificationCount}
+          </div>
         </div>
-        <div className="new-chat">+</div>
+        <div className="new-chat not-selectable">+</div>
       </div>
     </div>
   )
