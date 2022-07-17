@@ -1,19 +1,12 @@
-import React from "react";
-import { MediaPreview } from "./MediaPreview";
-import { media } from "../../demo/media"
+import React from 'react'
+import { MediaPreview } from './MediaPreview'
+import { media } from '../../fixtures/media'
 
 interface Props {}
 
+const mediaCount = 20
+
 export const Media: React.FC<Props> = () => {
-  let mediaCount = 20;
-
-  /* TODO: Make image preview dynamic: Max. 2 images, rest is a placeholder
-  with number (18+); 
-  Show only 1 or 2 imgs or placeholder text when there is media;
-  How to make container look like original? 
-  Same thing as Files -> isn't this serverside usually?
-  */
-
   return (
     <div className="media-container">
       <div className="personal-text-container">
@@ -30,5 +23,5 @@ export const Media: React.FC<Props> = () => {
       </div>
       <hr className="hr-seperator"></hr>
     </div>
-  );
-};
+  )
+}

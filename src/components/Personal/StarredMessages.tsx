@@ -1,11 +1,11 @@
 import React from 'react'
 import { StarredChatMessage } from './StarredChatMessage'
-import { useStoreStarredMsgs } from '../../store/store'
+import { useStore } from '../../store'
 
 interface Props {}
 
 export const StarredMessages: React.FC<Props> = () => {
-  const { starredMsgs } = useStoreStarredMsgs()
+  const { starredMsgs } = useStore()
 
   return (
     <div className="starred-messages-container">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStoreChatPartner } from '../../store/store'
+import { useStore } from '../../store'
 import { Contact } from '../../global/types'
 
 export const Conversation: React.FC<Contact> = (props) => {
@@ -7,13 +7,13 @@ export const Conversation: React.FC<Contact> = (props) => {
   const month = props.lastMsgDate.getMonth()
 
   // Extract the select method from Zustand - selects a current chat partner (based on userId)
-  const { select } = useStoreChatPartner()
+  const { selectChatPartnerFromId } = useStore()
 
   return (
     <div>
       <div
         className="conversation-container"
-        onClick={() => select(props.userId)}
+        onClick={() => selectChatPartnerFromId(props.userId)}
       >
         <div
           style={{ backgroundColor: props.color }}

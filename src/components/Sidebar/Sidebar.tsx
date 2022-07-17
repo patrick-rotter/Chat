@@ -10,9 +10,10 @@ import {
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
 import { Notifications } from './Notifications'
 
+const notificationCount = 3
+
 const Sidebar: FC = () => {
   const [showNotifications, setShowNotifications] = useState(false)
-  let notificationCount = 3
 
   const handleClick = (): void => {
     setShowNotifications((prevShowNotifications) => !prevShowNotifications)
@@ -44,11 +45,9 @@ const Sidebar: FC = () => {
       <div className="add-bell-container">
         <Notifications onScreen={showNotifications} />
         <Bell className="icon bell-icon" onClick={handleClick} />
-        {notificationCount !== 0 && (
-          <div className="notification-count not-selectable">
-            {notificationCount}
-          </div>
-        )}
+        <div className="notification-count not-selectable">
+          {notificationCount}
+        </div>
         <div className="new-chat">+</div>
       </div>
     </div>

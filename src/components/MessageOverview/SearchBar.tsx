@@ -9,7 +9,7 @@ export const SearchBar: React.FC<Props> = () => {
       <div className="search-bar-container">
         <div className="logo-icon">T</div>
         <div className="app-name">Telegraph</div>
-        <div className='search-icon-container'>
+        <div className="search-icon-container">
           <Search />
           <div className="tooltip">Search</div>
         </div>

@@ -1,17 +1,21 @@
 import React from 'react'
 import { Phone, Video, Search, MoreVertical } from 'react-feather'
-import { useStoreChatPartner } from '../../store/store'
+import { useStore } from '../../store'
 
 interface Props {}
 
 export const ChatPartner: React.FC<Props> = () => {
-  const { fName, lName, status, icon, color } = useStoreChatPartner((state) => state.chatPartner)
+  const { fName, lName, status, icon, color } = useStore(
+    (state) => state.chatPartner
+  )
 
   return (
     <div className="chat-partner">
       <div className="chat-partner-container">
         <div className="contact-info">
-          <div className="contact-picture" style={{backgroundColor: color}} >{icon}</div>
+          <div className="contact-picture" style={{ backgroundColor: color }}>
+            {icon}
+          </div>
           <div className="name-status-container">
             <div className="contact-name">
               {fName} {lName}

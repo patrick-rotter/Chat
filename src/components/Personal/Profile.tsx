@@ -6,11 +6,12 @@ import { useClickAway } from 'react-use'
 
 interface Props {}
 
+const userName = 'Patrick'
+const status = 'Busy'
+
 export const Profile: React.FC<Props> = () => {
   const [rotation, setRotation] = useState(0)
   const [showSettings, setShowSettings] = useState(false)
-  let userName = 'Patrick'
-  let status = 'Busy'
 
   // Detects a click outside the parent div and closes the window
   const ref = useRef(null)
@@ -35,7 +36,7 @@ export const Profile: React.FC<Props> = () => {
           <div className="user-status">{status}</div>
         </div>
       </div>
-      <div ref={ref} >
+      <div ref={ref}>
         <motion.div
           className="settings-btn"
           animate={{ rotate: rotation }}

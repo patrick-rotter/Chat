@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { contacts } from '../../demo/contacts'
+import { contacts } from '../../fixtures/contacts'
 import { Story } from './Story'
 import useDraggableScroll from 'use-draggable-scroll'
 

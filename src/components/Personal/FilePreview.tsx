@@ -1,14 +1,13 @@
-import React from "react";
-import { File } from "../../global/types";
-import { formatBytes } from "../../utils/util";
-import { turnFormatIntoIcon } from "../../utils/util";
+import React from 'react'
+import { File } from '../../global/types'
+import { formatBytes, turnFormatIntoIcon } from '../../util'
 
 export const FilePreview: React.FC<File> = (props) => {
-  const day = props.time.getDay();
-  const month = props.time.toLocaleString("default", { month: "short" });
-  const year = props.time.getFullYear();
+  const day = props.time.getDay()
+  const month = props.time.toLocaleString('default', { month: 'short' })
+  const year = props.time.getFullYear()
 
-  const size = formatBytes(props.size, 1);
+  const size = formatBytes(props.size, 1)
   const icon = turnFormatIntoIcon(props.format)
 
   return (
@@ -23,5 +22,5 @@ export const FilePreview: React.FC<File> = (props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

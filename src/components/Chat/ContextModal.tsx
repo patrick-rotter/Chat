@@ -4,14 +4,14 @@ import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined'
 import ReplyAllOutlinedIcon from '@mui/icons-material/ReplyAllOutlined'
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded'
 import { ChatMsg } from '../../global/types'
-import { useStoreStarredMsgs } from '../../store/store'
+import { useStore } from '../../store'
 
 type Props = {
   msg: ChatMsg
 }
 
 export const ContextModal: React.FC<Props> = (props) => {
-  const { starredMsgs, addStarredMsg } = useStoreStarredMsgs()
+  const { starredMsgs, addStarredMsg } = useStore()
 
   return (
     <div className="modal context-modal-container">

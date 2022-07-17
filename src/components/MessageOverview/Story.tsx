@@ -1,17 +1,18 @@
 import React from 'react'
 import { Contact } from '../../global/types'
 
+const colors = [
+  'lightblue',
+  'lightcoral',
+  'lightcyan',
+  'lightsalmon',
+  'lightgreen',
+  'lightpink',
+  'lightseagreen',
+  'lightskyblue'
+]
+
 export const Story: React.FC<Contact> = (props) => {
-  const colors = [
-    'lightblue',
-    'lightcoral',
-    'lightcyan',
-    'lightsalmon',
-    'lightgreen',
-    'lightpink',
-    'lightseagreen',
-    'lightskyblue'
-  ]
   const color = colors[Math.floor(Math.random() * colors.length)]
 
   return (
