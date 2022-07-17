@@ -104,7 +104,8 @@
 .video-container .tooltip,
 .phone-container .tooltip,
 .search-container .tooltip,
-.dots-container .tooltip {
+.dots-container .tooltip,
+.search-icon-container .tooltip {
   position: absolute;
   background-color: grey;
   color: white;
@@ -126,7 +127,8 @@
 .video-container:hover .tooltip,
 .phone-container:hover .tooltip,
 .search-container:hover .tooltip,
-.dots-container:hover .tooltip {
+.dots-container:hover .tooltip,
+.search-icon-container:hover .tooltip {
   opacity: 1;
 }
 
@@ -223,7 +225,7 @@
 
 .user-chat-msg,
 .partner-chat-msg {
-  font-size: 12px;
+  font-size: 14px;
   padding: 12px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;

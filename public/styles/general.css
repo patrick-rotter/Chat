@@ -54,6 +54,7 @@ body {
 #light .modal {
   background-color: #cfcfcf;
   color: black;
+  border: 1px solid rgb(196, 196, 196);
 }
 
 .not-selectable {

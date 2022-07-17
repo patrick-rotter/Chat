@@ -163,7 +163,7 @@
 }
 
 .file-preview-container:hover {
-  background-color: #454555;
+  background-color: #35353f;
 }
 
 #light .file-preview-container:hover {
@@ -236,7 +236,7 @@
 
 .starred-user-msg,
 .starred-partner-msg {
-  font-size: 12px;
+  font-size: 14px;
   padding: 12px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -258,12 +258,12 @@
 #light .starred-user-msg {
   background-color: rgb(105, 105, 253);
   color: white;
-  border: 1px solid black;
+  border: 1px solid rgb(196, 196, 196);
 }
 
 .starred-partner-msg {
   background-color: #2b2b35;
-  color: rgb(206, 206, 206);
+  color: rgb(172, 172, 172);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 15px;
 }
@@ -271,7 +271,7 @@
 #light .starred-partner-msg {
   background-color: rgb(231, 231, 231);
   color: black;
-  border: 1px solid black;
+  border: 1px solid rgb(196, 196, 196);
 }
 
 .starred-msg-info {

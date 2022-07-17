@@ -41,6 +41,13 @@
   margin-left: 20px;
 }
 
+.search-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*  Stories  */
 
 .stories-container {
@@ -236,7 +243,7 @@ TODO: top: 82px is set manually -> better solution?
 }
 
 .conversation-container:hover {
-  background-color: #454555;
+  background-color: #35353f;
 }
 
 #light .conversation-container:hover {

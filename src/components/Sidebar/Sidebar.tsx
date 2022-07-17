@@ -45,7 +45,9 @@ const Sidebar: FC = () => {
         <Notifications onScreen={showNotifications} />
         <Bell className="icon bell-icon" onClick={handleClick} />
         {notificationCount !== 0 && (
-          <div className="notification-count not-selectable">{notificationCount}</div>
+          <div className="notification-count not-selectable">
+            {notificationCount}
+          </div>
         )}
         <div className="new-chat">+</div>
       </div>

@@ -11,7 +11,7 @@ type ChatPartnerState = {
 export const useStoreChatPartner = create<ChatPartnerState>((set) => ({
   chatPartner: contacts[0],
   select: (userId) =>
-    set({ chatPartner: contacts.find((o) => o.userId === userId) }),
+    set({ chatPartner: contacts.find((o) => o.userId === userId) })
 }))
 
 // Zustand for storing starred messages

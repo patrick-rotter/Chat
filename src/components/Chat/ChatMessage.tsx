@@ -56,7 +56,6 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
               )}
               {showModal && <ContextModal msg={props} />}
             </div>
-
             <div className="user-chat-msg">{props.text}</div>
           </div>
           <div style={{ textAlign: 'right' }} className="msg-date">
