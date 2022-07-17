@@ -9,6 +9,7 @@ import {
 } from 'react-feather'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
 import { Notifications } from './Notifications'
+import '../../styles/sidebar.css'
 
 const notificationCount = 3
 

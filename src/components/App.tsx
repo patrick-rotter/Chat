@@ -3,6 +3,7 @@ import { Chat } from './Chat/Chat'
 import { MessageOverview } from './MessageOverview/MessageOverview'
 import { Personal } from './Personal/Personal'
 import Sidebar from './Sidebar/Sidebar'
+import '../styles/general.css'
 
 // Context API for light/dark mode
 export const ThemeContext = createContext({

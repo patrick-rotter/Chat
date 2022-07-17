@@ -3,6 +3,7 @@ import { Files } from './Files'
 import { Media } from './Media'
 import { Profile } from './Profile'
 import { StarredMessages } from './StarredMessages'
+import '../../styles/personal.css'
 
 export const Personal: React.FC = () => {
   return (
