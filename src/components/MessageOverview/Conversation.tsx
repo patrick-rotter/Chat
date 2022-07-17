@@ -5,7 +5,9 @@ import useTimeParts from '../../hooks'
 
 export const Conversation: React.FC<Contact> = (props) => {
   const { day, monthAsNumber: month } = useTimeParts(props.lastMsgDate)
-  const { selectChatPartnerFromId } = useStore()
+  const selectChatPartnerFromId = useStore(
+    (state) => state.selectChatPartnerFromId
+  )
 
   return (
     <div>

@@ -3,7 +3,7 @@ import { StarredChatMessage } from './StarredChatMessage'
 import { useStore } from '../../store'
 
 export const StarredMessages: React.FC = () => {
-  const { starredMsgs } = useStore()
+  const starredMsgs = useStore((state) => state.starredMsgs)
 
   return (
     <div className="starred-messages-container">

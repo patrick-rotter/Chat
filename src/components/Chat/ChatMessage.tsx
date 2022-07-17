@@ -33,68 +33,65 @@ export const ChatMessage: React.FC<ChatMsg> = (props) => {
     setShowModal(false)
   }
 
+  const userChatMessage = (
+    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <div className="chat-msg-container right-aligned">
+        <div className="context-menu-container" ref={ref}>
+          {isHovering && (
+            <div className="context-menu">
+              <div>
+                <MoreHorizontal
+                  className="context-icon"
+                  onClick={handleClick}
+                />
+              </div>
+              <Smile className="context-icon" />
+            </div>
+          )}
+          {showModal && <ContextModal msg={props} closeModal={closeModal} />}
+        </div>
+        <div className="user-chat-msg">{props.text}</div>
+      </div>
+      <div style={{ textAlign: 'right' }} className="msg-date">
+        {day} {month} {year} &nbsp; {hour}:{min}
+      </div>
+    </div>
+  )
+
+  const partnerChatMessage = (
+    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <div className="chat-msg-container">
+        <div className="partner-chat-msg">{props.text}</div>
+        <div
+          style={{ justifyContent: 'start' }}
+          className="context-menu-container"
+          ref={ref}
+        >
+          {isHovering && (
+            <div className="context-menu">
+              <Smile className="context-icon" />
+              <div>
+                <MoreHorizontal
+                  className="context-icon"
+                  onClick={handleClick}
+                />
+              </div>
+            </div>
+          )}
+          {showModal && <ContextModal msg={props} closeModal={closeModal} />}
+        </div>
+      </div>
+      <div style={{ textAlign: 'left' }} className="msg-date">
+        {day} {month} {year} &nbsp; {hour}:{min}
+      </div>
+    </div>
+  )
+
   /* Returns a chat bubble with a different style for user msgs
      or chat partner msgs;
-     Could have been solved with ternary operator only, 
-     but emoji/3-dot context menu alignment would not be possible */
+     Could have been solved with inline css + ternary operator only, 
+     but emoji/3-dot context menu alignment made seperate HTML element 
+     trees necessary. */
 
-  return (
-    <>
-      {props.userIsAuthor ? (
-        <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-          <div className="chat-msg-container right-aligned">
-            <div className="context-menu-container" ref={ref}>
-              {isHovering && (
-                <div className="context-menu">
-                  <div>
-                    <MoreHorizontal
-                      className="context-icon"
-                      onClick={handleClick}
-                    />
-                  </div>
-                  <Smile className="context-icon" />
-                </div>
-              )}
-              {showModal && (
-                <ContextModal msg={props} closeModal={closeModal} />
-              )}
-            </div>
-            <div className="user-chat-msg">{props.text}</div>
-          </div>
-          <div style={{ textAlign: 'right' }} className="msg-date">
-            {day} {month} {year} &nbsp; {hour}:{min}
-          </div>
-        </div>
-      ) : (
-        <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-          <div className="chat-msg-container">
-            <div className="partner-chat-msg">{props.text}</div>
-            <div
-              style={{ justifyContent: 'start' }}
-              className="context-menu-container"
-              ref={ref}
-            >
-              {isHovering && (
-                <div className="context-menu">
-                  <Smile className="context-icon" />
-                  <div>
-                    <MoreHorizontal
-                      className="context-icon"
-                      onClick={handleClick}
-                    />
-                  </div>
-                </div>
-              )}
-              {showModal && (
-                <ContextModal msg={props} closeModal={closeModal} />
-              )}
-            </div>
-          </div>
-          <div style={{ textAlign: 'left' }} className="msg-date">
-            {day} {month} {year} &nbsp; {hour}:{min}
-          </div>
-        </div>
-      )}
-    </>
-  )
+  return <>{props.userIsAuthor ? userChatMessage : partnerChatMessage}</>
 }
