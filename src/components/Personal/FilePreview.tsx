@@ -1,11 +1,10 @@
 import React from 'react'
 import { File } from '../../global/types'
 import { formatBytes, turnFormatIntoIcon } from '../../util'
+import useTimeParts from '../../hooks'
 
 export const FilePreview: React.FC<File> = (props) => {
-  const day = props.time.getDay()
-  const month = props.time.toLocaleString('default', { month: 'short' })
-  const year = props.time.getFullYear()
+  const { day, monthAsText: month, year } = useTimeParts(props.time)
 
   const size = formatBytes(props.size, 1)
   const icon = turnFormatIntoIcon(props.format)

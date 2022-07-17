@@ -3,13 +3,10 @@ import { ChatMsg } from '../../global/types'
 import { MoreHorizontal, Smile } from 'react-feather'
 import { ContextModal } from './ContextModal'
 import { useClickAway } from 'react-use'
+import useTimeParts from '../../hooks'
 
 export const ChatMessage: React.FC<ChatMsg> = (props) => {
-  const day = props.time.getDay()
-  const month = props.time.toLocaleString('default', { month: 'short' })
-  const year = props.time.getFullYear()
-  const hour = props.time.getHours()
-  const min = props.time.getMinutes()
+  const { day, monthAsText: month, year, hour, min } = useTimeParts(props.time)
 
   const [isHovering, setIsHovering] = useState(false)
   const [showModal, setShowModal] = useState(false)

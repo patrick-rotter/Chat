@@ -1,12 +1,10 @@
 import React from 'react'
 import { useStore } from '../../store'
 import { Contact } from '../../global/types'
+import useTimeParts from '../../hooks'
 
 export const Conversation: React.FC<Contact> = (props) => {
-  const day = props.lastMsgDate.getDay()
-  const month = props.lastMsgDate.getMonth()
-
-  // Extract the select method from Zustand - selects a current chat partner (based on userId)
+  const { day, monthAsNumber: month } = useTimeParts(props.lastMsgDate)
   const { selectChatPartnerFromId } = useStore()
 
   return (
