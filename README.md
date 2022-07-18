@@ -8,4 +8,4 @@ It emulates a modern UI with some basic functionality.
 ### Running the application
 
 Navigate into root directory and run ```npm install``` to install dependencies.<br>
-To run the application, type ```node app.js```.<br>
+To run the application, type ```npm start```.<br>
