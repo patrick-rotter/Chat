@@ -83,8 +83,6 @@
   cursor: pointer;
 }
 
-/* TODO: Neon colors */
-
 .more-btn {
   margin-left: 22px;
   color: rgb(112, 112, 112);
@@ -168,9 +166,10 @@
 
 .context-menu-container {
   min-width: 120px;
+  margin: 0 10px 0 10px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   position: relative;
 }
 
@@ -186,11 +185,11 @@
 }
 
 .context-icon:hover {
-  color: white
+  color: white;
 }
 
 #light .context-icon:hover {
-  color: rgb(182, 182, 182)
+  color: rgb(182, 182, 182);
 }
 
 .context-modal-container {
@@ -214,7 +213,7 @@
 
 .chat-msg-container {
   width: fit-content;
-  max-width: 80%;
+  max-width: 95%;
   display: flex;
 }
 
